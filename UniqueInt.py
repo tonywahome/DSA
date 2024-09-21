@@ -46,7 +46,7 @@ def output(self):
             outfile.write(f"{number}\n")
     
 input_filename = 'sample_01.txt'
-output_filename = 'sample_02.txt'
+output_filename = 'results_file.txt'
 processor = UniqueInt(input_filename, output_filename)
 processor.process_file()
     
