@@ -1,4 +1,3 @@
-
 class UniqueInt:
     def __init__(self, input_filename, output_filename):
         self.input_filename = input_filename
@@ -18,10 +17,18 @@ class UniqueInt:
             return
         
     for i in range(len(self.unique_integers)):
-        if self.unique_integers[i] > number:
+        if self.unique_integers[i] > number: # type: ignore
             self.unique_integers.insert(i, number)
             return
-        self.unique_integers.append(number) 
+    self.unique_integers.append(number) 
+
+def process_unique_ints(lst):
+    unique_set = set(lst)
+    return list(unique_set)
+
+# Example usage
+numbers = [1, 2, 2, 3, 4, 4, 5]
+print(process_unique_ints(numbers))  # Output: [1, 2, 3, 4, 5]
 
 def procedure_file(self):
     """reads the input files and extracts unique integers"""
