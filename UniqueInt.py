@@ -18,18 +18,18 @@ class UniqueInt:
         
     for i in range(len(self.unique_integers)):
         if self.unique_integers[i] > number: # type: ignore
-            self.unique_integers.insert(i, number)
-            return
-    self.unique_integers.append(number) 
+            self.unique_integers.insert(i, number) # type: ignore
+            return # type: ignore
+    self.unique_integers.append(number) # type: ignore
 
 def process_unique_ints(lst):
     unique_set = set(lst)
     return list(unique_set)
 
 # Example usage
-numbers = [1, 2, 2, 3, 4, 4, 5]
-print(process_unique_ints(numbers))  # Output: [1, 2, 3, 4, 5]
-
+unique_ints = UniqueInt()
+unique_ints.insert_sorted(3)
+unique_ints.insert_sorted(1)
 def procedure_file(self):
     """reads the input files and extracts unique integers"""
     with open(self.input_filename, 'r') as infile:
@@ -53,6 +53,9 @@ def output(self):
             outfile.write(f"{number}\n")
     
 input_filename = 'sample_01.txt'
+output_filename = 'results_file.txt'
+processor = UniqueInt(input_filename, output_filename)
+processor.process_file()_01.txt'
 output_filename = 'results_file.txt'
 processor = UniqueInt(input_filename, output_filename)
 processor.process_file()
